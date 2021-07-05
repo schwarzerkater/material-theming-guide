@@ -5,16 +5,54 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
-$material-theming-guide-primary: mat-palette($mat-indigo);
-$material-theming-guide-accent: mat-palette($mat-pink, A200, A100, A400);
-$material-theming-guide-warn: mat-palette($mat-red);
+$mtg-primary: (
+  100: #b6c4d2,
+  300: #97abbf,
+  500: #849ab1,
+  700: #69809b,
+  contrast: (
+    100: #000000,
+    300: #000000,
+    500: #000000,
+    700: #ffffff,
+  ),
+);
+$mtg-accent: (
+  100: #f5e0bd,
+  300: #e8b665,
+  500: #de9723,
+  700: #d5841a,
+  contrast: (
+    100: #000000,
+    300: #000000,
+    500: #000000,
+    700: #000000,
+  ),
+);
+$mtg-warn: (
+  100: #e68477,
+  300: #db4f3d,
+  500: #d23f2f,
+  700: #c4261a,
+  contrast: (
+    100: #000000,
+    300: #ffffff,
+    500: #ffffff,
+    700: #ffffff,
+  ),
+);
 
-$material-theming-guide-theme: mat-light-theme((
+// The palettes. The optional parameters are the hues to be assigned to the keywords default, lighter and darker.
+$mtg-primary-palette: mat-palette($mtg-primary, 500, 300, 700);
+$mtg-accent-palette: mat-palette($mtg-accent, 500, 300, 700);
+$mtg-warn-palette: mat-palette($mtg-warn, 500, 300, 700);
+
+$mtg-theme: mat-light-theme((
   color: (
-    primary: $material-theming-guide-primary,
-    accent: $material-theming-guide-accent,
-    warn: $material-theming-guide-warn,
+    primary: $mtg-primary-palette,
+    accent: $mtg-accent-palette,
+    warn: $mtg-warn-palette,
   )
 ));
 
-@include angular-material-theme($material-theming-guide-theme);
+@include angular-material-theme($mtg-theme);
