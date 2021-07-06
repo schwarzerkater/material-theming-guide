@@ -1,0 +1,9 @@
+@mixin header-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  #toolbar {
+    color: mat-color($primary, darker-contrast);
+    background: mat-color($primary, darker);
+    justify-content: space-between;
+  }
+}

@@ -9,13 +9,16 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatInputModule } from '@angular/material/input'
 import { ReactiveFormsModule } from '@angular/forms'
 import { MatGridListModule } from '@angular/material/grid-list';
-import { ColorGridComponent } from './color-grid/color-grid.component'
+import { ColorGridComponent } from './color-grid/color-grid.component';
+import { HeaderComponent } from './header/header.component'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 
 @NgModule({
   declarations: [
     AppComponent,
     StatusIndicatorComponent,
-    ColorGridComponent
+    ColorGridComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { ColorGridComponent } from './color-grid/color-grid.component'
     MatToolbarModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

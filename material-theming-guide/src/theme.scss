@@ -1,12 +1,14 @@
 @import '~@angular/material/theming';
 @import 'styles-colors';
 @import 'src/app/app.component';
+@import 'src/app/header/header.component';
 @import 'src/app/status-indicator/status-indicator.component';
 @import 'src/app/color-grid/color-grid.component';
 
 @mixin custom-components-theme($theme) {
   @include styles-colors-theme($theme);
   @include app-theme($theme);
+  @include header-theme($theme);
   @include status-indicator-theme($theme);
   @include color-grid-theme($theme);
 }
@@ -73,3 +75,56 @@ $mtg-force-primary-theme: mat-light-theme($mtg-primary-palette, $mtg-primary-pal
 
 @include angular-material-theme($mtg-force-primary-theme);
 @include custom-components-theme($mtg-theme);
+
+// DARK THEME (set in theme.service.ts)
+.mtg-dark-theme {
+  $mtg-primary: (
+    100: #9ac8ff,
+    300: #6eb1ff,
+    500: #5ba1ff,
+    700: #3f88ff,
+    contrast: (
+      100: #000000,
+      300: #000000,
+      500: #000000,
+      700: #ffffff,
+    ),
+  );
+  $mtg-accent: (
+    100: #ffca9e,
+    300: #ffb374,
+    500: #ffa361,
+    700: #ff8b44,
+    contrast: (
+      100: #000000,
+      300: #000000,
+      500: #000000,
+      700: #000000,
+    ),
+  );
+  $mtg-warn: (
+    100: #ff8683,
+    300: #ff524e,
+    500: #ff413d,
+    700: #ff2825,
+    contrast: (
+      100: #000000,
+      300: #000000,
+      500: #ffffff,
+      700: #ffffff,
+    ),
+  );
+
+  $mtg-primary-palette: mat-palette($mtg-primary, 500, 300, 700);
+  $mtg-accent-palette: mat-palette($mtg-accent, 500, 300, 700);
+  $mtg-warn-palette: mat-palette($mtg-warn, 500, 300, 700);
+
+  $mtg-theme: map-merge(
+      mat-dark-theme($mtg-primary-palette, $mtg-accent-palette, $mtg-warn-palette),
+      (business: $mtg-business)
+  );
+  $mtg-force-primary-theme: mat-dark-theme($mtg-primary-palette, $mtg-primary-palette, $mtg-warn-palette);
+
+  @include angular-material-theme($mtg-force-primary-theme);
+  @include custom-components-theme($mtg-theme);
+}
