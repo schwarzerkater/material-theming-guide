@@ -52,13 +52,8 @@ $mtg-primary-palette: mat-palette($mtg-primary, 500, 300, 700);
 $mtg-accent-palette: mat-palette($mtg-accent, 500, 300, 700);
 $mtg-warn-palette: mat-palette($mtg-warn, 500, 300, 700);
 
-$mtg-theme: mat-light-theme((
-  color: (
-    primary: $mtg-primary-palette,
-    accent: $mtg-accent-palette,
-    warn: $mtg-warn-palette,
-  )
-));
+$mtg-theme: mat-light-theme($mtg-primary-palette, $mtg-accent-palette, $mtg-warn-palette);
+$mtg-force-primary-theme: mat-light-theme($mtg-primary-palette, $mtg-primary-palette, $mtg-warn-palette);
 
-@include angular-material-theme($mtg-theme);
+@include angular-material-theme($mtg-force-primary-theme);
 @include custom-components-theme($mtg-theme);
