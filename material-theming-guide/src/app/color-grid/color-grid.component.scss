@@ -1,0 +1,64 @@
+@mixin color-grid-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $business: map-get($theme, business);
+
+  // This might look a little intense. Keep in mind though that you'll likely never need something like this in a regular application.
+
+  .p700 {
+    color: mat-contrast($primary, 700);
+    background: mat-color($primary, 700);
+  }
+  .p500 {
+    color: mat-contrast($primary, 500);
+    background: mat-color($primary, 500);
+  }
+  .p300 {
+    color: mat-contrast($primary, 300);
+    background: mat-color($primary, 300);
+  }
+  .p100 {
+    color: mat-contrast($primary, 100);
+    background: mat-color($primary, 100);
+  }
+
+  .a700 {
+    color: mat-contrast($accent, 700);
+    background: mat-color($accent, 700);
+  }
+  .a500 {
+    color: mat-contrast($accent, 500);
+    background: mat-color($accent, 500);
+  }
+  .a300 {
+    color: mat-contrast($accent, 300);
+    background: mat-color($accent, 300);
+  }
+  .a100 {
+    color: mat-contrast($accent, 100);
+    background: mat-color($accent, 100);
+  }
+
+  .w700 {
+    color: mat-contrast($warn, 700);
+    background: mat-color($warn, 700);
+  }
+  .w500 {
+    color: mat-contrast($warn, 500);
+    background: mat-color($warn, 500);
+  }
+  .w300 {
+    color: mat-contrast($warn, 300);
+    background: mat-color($warn, 300);
+  }
+  .w100 {
+    color: mat-contrast($warn, 100);
+    background: mat-color($warn, 100);
+  }
+
+  .special {
+    color: mat-contrast($business, super-special-status);
+    background: mat-color($business, super-special-status);
+  }
+}

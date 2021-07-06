@@ -1,4 +1,17 @@
+<mat-toolbar id="toolbar">MATERIAL THEMING: THE ULTIMATE EXAMPLE PROJECT <app-status-indicator></app-status-indicator></mat-toolbar>
 <div class="dashboard">
-  <div><app-status-indicator></app-status-indicator></div>
-  <div><button mat-button class="confirm-button">OK</button></div>
+  <div class="left">
+    <div><app-status-indicator></app-status-indicator></div>
+    <div class="elevated-area">
+      <!-- form field is automatically styled via angular-material-theme -->
+      <mat-form-field>
+        <input matInput placeholder="Required input" [formControl]="requiredControl" required>
+        <mat-error *ngIf="requiredControl.invalid">Input can't be empty.</mat-error>
+      </mat-form-field>
+    </div>
+    <div><button mat-button class="confirm-button">OK</button></div>
+  </div>
+  <div class="right">
+    <app-color-grid></app-color-grid>
+  </div>
 </div>
