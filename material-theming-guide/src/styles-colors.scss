@@ -1,0 +1,16 @@
+/**
+  Holds all theme-aware global styling classes (as opposed to plain layout classes)
+ */
+
+@mixin styles-colors-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .confirm-button {
+    color: mat-color($primary, default-contrast);
+    background: mat-color($primary, default);
+  }
+}

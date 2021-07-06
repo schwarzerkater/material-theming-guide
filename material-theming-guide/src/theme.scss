@@ -1,4 +1,9 @@
 @import '~@angular/material/theming';
+@import 'styles-colors';
+
+@mixin custom-components-theme($theme) {
+  @include styles-colors-theme($theme);
+}
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -56,3 +61,4 @@ $mtg-theme: mat-light-theme((
 ));
 
 @include angular-material-theme($mtg-theme);
+@include custom-components-theme($mtg-theme);
