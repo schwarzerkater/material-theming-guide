@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button'
+import { MatButtonModule } from '@angular/material/button';
+import { StatusIndicatorComponent } from './status-indicator/status-indicator.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StatusIndicatorComponent
   ],
   imports: [
     BrowserModule,

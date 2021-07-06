@@ -1,14 +1,20 @@
 @import '~@angular/material/theming';
 @import 'styles-colors';
+@import 'src/app/status-indicator/status-indicator.component';
 
 @mixin custom-components-theme($theme) {
   @include styles-colors-theme($theme);
+  @include status-indicator-theme($theme);
 }
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat-core();
+
+$mtg-business: (
+  super-special-status: #9d1681
+);
 
 $mtg-primary: (
   100: #b6c4d2,
@@ -52,7 +58,10 @@ $mtg-primary-palette: mat-palette($mtg-primary, 500, 300, 700);
 $mtg-accent-palette: mat-palette($mtg-accent, 500, 300, 700);
 $mtg-warn-palette: mat-palette($mtg-warn, 500, 300, 700);
 
-$mtg-theme: mat-light-theme($mtg-primary-palette, $mtg-accent-palette, $mtg-warn-palette);
+$mtg-theme: map-merge(
+    mat-light-theme($mtg-primary-palette, $mtg-accent-palette, $mtg-warn-palette),
+    (business: $mtg-business)
+);
 $mtg-force-primary-theme: mat-light-theme($mtg-primary-palette, $mtg-primary-palette, $mtg-warn-palette);
 
 @include angular-material-theme($mtg-force-primary-theme);

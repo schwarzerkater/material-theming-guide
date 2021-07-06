@@ -1,0 +1,14 @@
+@mixin status-indicator-theme($theme) {
+  $business: map-get($theme, business);
+
+  .super-special-status {
+    background: mat-color($business, super-special-status);
+  }
+}
+
+.status-circle {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
