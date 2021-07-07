@@ -1,2 +1,4 @@
 # material-theming-guide
-Example project for my Material Theming article.
+Example project accompanying my Material Theming Guide over at [thoughtstrands.com](https://thoughtstrands.com).
+
+Angular 11, TypeScript 4. Made with IntelliJ IDEA.
