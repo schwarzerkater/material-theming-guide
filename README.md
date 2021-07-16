@@ -1,5 +1,5 @@
 # material-theming-guide
-Example project accompanying [my Material Theming Guide over at thoughtstrands.com](https://thoughtstrands.com/2021/07/07/material-theming-the-ultimate-guide/).
+Example project accompanying my [Material Theming Guide over at thoughtstrands.com](https://thoughtstrands.com/2021/07/07/material-theming-the-ultimate-guide/).
 
 Angular 11, TypeScript 4. Made with IntelliJ IDEA.
 
